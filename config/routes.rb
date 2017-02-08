@@ -9,8 +9,8 @@ devise_for :users
 
   namespace :admin do
     resources :products
-    resources :carts
   end
 
   root 'products#index'
+  resources :carts
 end
