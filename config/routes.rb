@@ -19,4 +19,5 @@ devise_for :users
       post :checkout
     end
   end
+  resources :orders
 end
