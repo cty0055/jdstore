@@ -25,7 +25,7 @@ devise_for :users
       post :pay_with_wechat
     end
   end
-  end
+  
   namespace :account do
    resources :orders
  end
