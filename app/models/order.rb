@@ -20,7 +20,7 @@ class Order < ApplicationRecord
  def pay!
    self.update_columns(is_paid: true )
  end
-end
+
 
 include AASM
 
@@ -31,7 +31,6 @@ include AASM
     state :shipped
     state :order_cancelled
     state :good_returned
-
 
     event :make_payment, after_commit: :pay! do
       transitions from: :order_placed, to: :paid
@@ -53,3 +52,4 @@ include AASM
       transitions from: [:order_placed, :paid], to: :order_cancelled
     end
   end
+end
